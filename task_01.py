@@ -5,14 +5,10 @@
 
 def get_matches(players):
     new_list = []
-    for index, name in enumerate(players, start = 0):
-        for index2, name2 in enumerate(players, start = 1):
-            if index < index2 and not index:
+    for index, name in enumerate(players):
+        for index2, name2 in enumerate(players):
+            if index2 < index:
+                continue
+            if index is not index2:
                 new_list.append((name, name2))
-            else:
-                pass
     return new_list
-                
-
-if __name__ == '__main__':
-    print get_matches(['Harry','Howard','Hugh'])
