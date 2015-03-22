@@ -7,12 +7,14 @@ import getpass
 
 def login(username, maxattempts = 4):
     authenticated = False
-    user_p = getpass.getpass(prompt = 'Please enter your password:')
+    user_p = 'Please enter your password:'
     err_mesg = 'Incorrect Username and Password. You have {} atempts left.'
-    while maxattempts > 0:
-        if user_p == authentication.authenticate(username, user_p):
-            authenticated = authentication.authenticate(username, user_p)
-        elif user_p:
+    while maxattempts > 0 and authenticated == False:
+        print user_p
+        password = getpass.getpass()
+        if password != authentication.authenticate(username, password):
             maxattempts = maxattempts - 1
-            return err_mesg.format(maxattempts)
-        return authenticated
+            print err_mesg.format(maxattempts)
+        else:
+            continue
+    return authentication.authenticate(username,password)  
