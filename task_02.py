@@ -4,15 +4,11 @@
 import authentication
 import getpass
 
-def login(username, maxattempts):
+
+
+def login(username, maxattempts = 4):
     authenticated = False
-    pass_message = getpass.getpass('Please enter your password:')
-    err_message = getpass.getpass('Incorrect username and password. You have {} attempts left.')
-    while authenticated:
-        return pass_message
-        if authenticated != authentication.authenticate(username,pass_message):
-            return err_message
-        else:
-            authenticated = authentication.authenticate(username,pass_message)
-    return authenticated
-    
+    pw_messg = 'Please enter your password'
+    error_messg = 'Incorrect Username and Password. You have {} atempts left.'
+    while authenticated and maxattempts < 4:
+        getpass.getpass(pw_messg,stream = sys.stdin)
