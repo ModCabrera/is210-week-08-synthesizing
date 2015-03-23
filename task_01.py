@@ -8,7 +8,7 @@ def get_matches(players):
 
     Args:
         players (list): A list of players.
-    
+
     Returns:
         new_list (list): A newly created list of tuples, containing players.
 

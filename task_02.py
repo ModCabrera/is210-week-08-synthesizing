@@ -5,13 +5,16 @@ import authentication
 import getpass
 
 
-def login(username, maxattempts = 3):
+def login(username, maxattempts=3):
     """Login system to authenticate a username and password.
+
     Args:
         username (str): Username of user
         maxattempts (int, optional): Maximum allowed attempts to enter password.
+
     Returns:
-        authenticated (bool): True if username and password are correct,else False.
+        authenticated (bool): True if username,password are correct,else False.
+
     Examples:
         >>> task_02.login('mike', 4)
         Please enter your password:
