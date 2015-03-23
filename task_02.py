@@ -39,9 +39,9 @@ def login(username, maxattempts=3):
     while maxattempts:
         print user_p
         password = getpass.getpass()
-        authenticated = authentication.authenticate(username,password)
+        authenticated = authentication.authenticate(username, password)
         maxattempts = maxattempts - 1
-    
+
         if password == authenticated and maxattempts <= 3:
             return authenticated
         elif password != authenticated and maxattempts > 3:
